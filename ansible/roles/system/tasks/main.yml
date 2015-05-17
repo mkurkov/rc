@@ -2,3 +2,6 @@
 - name: Install Keepassx
   apt: pkg=keepassx state=present
   sudo: yes
+- name: Install Chromium
+  apt: pkg=chromium-browser state=present
+  sudo: yes

@@ -1,0 +1,4 @@
+---
+- name: Install Keepassx
+  apt: pkg=keepassx state=present
+  sudo: yes

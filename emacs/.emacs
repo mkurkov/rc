@@ -43,7 +43,7 @@
 (load "~/rc/emacs/mk-sql.el")
 (load "~/rc/emacs/mk-j.el")
 (load "~/rc/emacs/mk-haskell")
-(load "~/rc/emacs/mk-erlang.el")
+;(load "~/rc/emacs/mk-erlang.el")
 (load "~/rc/emacs/mk-shell.el")
 (load "~/rc/emacs/mk-ruby.el")
 (load "~/rc/emacs/mk-compilation.el")
@@ -56,6 +56,7 @@
 (load "~/rc/emacs/mk-tex")
 (load "~/rc/emacs/mk-xml")
 (load "~/rc/emacs/mk-string-inflection")
+(load "~/rc/emacs/mk-yaml")
 
 ;; IRC
 (load "~/rc/emacs/mk-erc.el")

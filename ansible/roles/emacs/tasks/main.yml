@@ -1,0 +1,9 @@
+---
+- name: Install Emacs
+  apt: pkg=emacs state=present
+  sudo: yes
+- name: Create .emacs Symlink
+  file: >
+    src=/home/{{ansible_user_id}}/rc/emacs/.emacs
+    dest=/home/{{ansible_user_id}}/.emacs
+    state=link

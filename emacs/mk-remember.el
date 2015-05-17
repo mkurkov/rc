@@ -1,8 +1,6 @@
 ;;;  Load Org Remember Stuff
 (require 'remember)
 
-(org-remember-insinuate)
-
 ; I use C-M-r to start org-remember
 (global-set-key (kbd "C-M-r") 'org-remember)
 

@@ -1,0 +1,4 @@
+---
+- name: Install DropBox
+  apt: pkg=nautilus-dropbox state=present
+  sudo: yes

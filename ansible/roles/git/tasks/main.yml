@@ -1,0 +1,3 @@
+---
+- name: Setup git global config
+  template: src=gitconfig.j2 dest={{ user_home }}/.gitconfig owner={{ ansible_user_id }} group={{ ansible_user_id }}

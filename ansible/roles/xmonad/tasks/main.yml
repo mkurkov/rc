@@ -23,3 +23,5 @@
 - name: Install gnome-xmonad.desktop
   copy: src=gnome-xmonad.desktop dest=/usr/share/xsessions/gnome-xmonad.desktop
   sudo: yes
+- name: Remove bottom gnome panel
+  command: gsettings set org.gnome.gnome-panel.layout toplevel-id-list "['top-panel']"

@@ -4,6 +4,7 @@
     - set_fact: user_home=/home/{{ ansible_user_id }}
   roles:
     - system
+    - x1
     - git
     - dropbox
     - emacs

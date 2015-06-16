@@ -5,3 +5,6 @@
 - name: Install Chromium
   apt: pkg=chromium-browser state=present
   sudo: yes
+- name: Install curl
+  apt: pkg=curl state=present
+  sudo: yes

@@ -3,7 +3,7 @@
 Author: Mikl Kurkov (mkurkov@gmail.com)
 
 This is my personal development environment setup.
-It uses Ansible for provisioning new development machine and consist of
+It uses Ansible for provisioning new development machine and consists of
 
 - Ubuntu (15.04)
 - XMonad (tiling WM)
@@ -27,11 +27,13 @@ It uses Ansible for provisioning new development machine and consist of
 
 * Setup
 
+Install Ubuntu 15.04
 > sudo apt-get update
 > sudo apt-get install ansible git-core
 > git clone https://github.com/mkurkov/rc
 > cd rc
 Edit ansible/inventory (user full name, email)
+Tweak ansible/main.yml roles
 > ./install.sh
 
 * Usage

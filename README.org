@@ -1,0 +1,50 @@
+* Overview
+
+Author: Mikl Kurkov (mkurkov@gmail.com)
+
+This is my personal development environment setup.
+It uses Ansible for provisioning new development machine and consist of
+
+- Ubuntu (15.04)
+- XMonad (tiling WM)
+- Ansible (used for provisioning new machine)
+- Git
+- Emacs (with many packets from ELPA)
+- Erlang (main working language)
+- Haskell (side projects)
+- J (jsoftware.com - prototyping/power calculator)
+- Latex (+ PGF/TikZ for graphics)
+- PostgreSQL
+- VirtualBox (mostly for some Windows apps)
+- Docker
+- KeepassX (for passwords/secrets keeping)
+- Dropbox
+- tmux (advanced shell multiplexor)
+- urxvt (advanced terminal)
+- Solarized color theme (shell and emacs)
+- Firefox+Vimperator (multiple instances for different spaces - work,home,test)
+- Google Chrome (for some sites that need it)
+
+* Setup
+
+> sudo apt-get update
+> sudo apt-get install ansible git-core
+> git clone https://github.com/mkurkov/rc
+> cd rc
+Edit ansible/inventory (user full name, email)
+> ./install.sh
+
+* Usage
+
+After provisioning it should made next changes to OS:
+
+- Install needed packages
+- Change switching layout hotkey to Both Shifts
+- Swap ALT <-> CTRL
+- Set PrtSc to Win (for Thinkpad keyboard)
+- Add Xmonad session entry to login screen
+- Setup dotfiles in home dir for different apps
+
+** Xmonad
+** Tmux
+** Emacs

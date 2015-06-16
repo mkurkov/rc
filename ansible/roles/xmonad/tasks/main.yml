@@ -1,0 +1,25 @@
+---
+- name: Install Gnome Session Flashback
+  apt: pkg=gnome-session-flashback state=present
+  sudo: yes
+- name: Install Xmonad
+  apt: pkg=xmonad state=present
+  sudo: yes
+- name: Install Xmonad-Contrib
+  apt: pkg=libghc-xmonad-contrib-dev state=present
+  sudo: yes
+- name: Create .xmonad dir
+  file: path={{ user_home }}/.xmonad state=directory owner={{ ansible_user_id }} group={{ ansible_user_id }}
+- name: Copy xmonad.hs
+  copy: src=xmonad.hs dest={{ user_home }}/.xmonad/xmonad.hs owner={{ ansible_user_id }} group={{ ansible_user_id }}
+  notify:
+    - recompile xmonad
+- name: Install gnome-session-xmonad
+  copy: src=gnome-session-xmonad dest=/usr/bin/gnome-session-xmonad mode=0755
+  sudo: yes
+- name: Install gnome-xmonad.session
+  copy: src=gnome-xmonad.session dest=/usr/share/gnome-session/sessions/gnome-xmonad.session
+  sudo: yes
+- name: Install gnome-xmonad.desktop
+  copy: src=gnome-xmonad.desktop dest=/usr/share/xsessions/gnome-xmonad.desktop
+  sudo: yes

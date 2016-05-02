@@ -42,7 +42,7 @@
 (load "~/rc/emacs/mk-sql.el")
 (load "~/rc/emacs/mk-j.el")
 (load "~/rc/emacs/mk-haskell")
-;(load "~/rc/emacs/mk-erlang.el")
+(load "~/rc/emacs/mk-erlang.el")
 (load "~/rc/emacs/mk-shell.el")
 (load "~/rc/emacs/mk-ruby.el")
 (load "~/rc/emacs/mk-compilation.el")

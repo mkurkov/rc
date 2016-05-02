@@ -20,7 +20,6 @@
 (load "~/rc/emacs/mk-macro.el")
 
 ;; minor modes
-(load "~/rc/emacs/mk-iswitchb.el")
 (load "~/rc/emacs/mk-ido.el")
 (load "~/rc/emacs/mk-dired.el")
 (load "~/rc/emacs/mk-uniquify.el")

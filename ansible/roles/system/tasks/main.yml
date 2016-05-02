@@ -1,10 +1,16 @@
 ---
-- name: Install Keepassx
-  apt: pkg=keepassx state=present
+- name: Install packages
+  apt: pkg={{ item }} state=present
   sudo: yes
-- name: Install Chromium
-  apt: pkg=chromium-browser state=present
-  sudo: yes
-- name: Install curl
-  apt: pkg=curl state=present
-  sudo: yes
+  with_items:
+    - chromium-browser
+    - curl
+    - virtualbox
+    - docker
+    - docker.io
+    - intltool
+    - unicode-rxvt
+    - htop
+    - tmux
+    - zsh
+    - taskwarrior

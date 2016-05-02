@@ -2,7 +2,7 @@
   copy: src=20-intel.conf dest=/usr/share/X11/xorg.conf.d/20-intel.conf mode=0644
   sudo: yes
 - name: Scaling (text)
-  command: gsettings set org.gnome.desktop.interface text-scaling-factor 1
+  command: gsettings set org.gnome.desktop.interface text-scaling-factor 2
 - name: Scaling (cursor size)
   command: gsettings set org.gnome.desktop.interface cursor-size 45
 - name: Scaling (scale factor)

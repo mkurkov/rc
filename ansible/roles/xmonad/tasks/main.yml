@@ -1,27 +1,34 @@
 ---
-- name: Install Gnome Session Flashback
-  apt: pkg=gnome-session-flashback state=present
+- name: Install packages
+  apt: pkg={{ item }} state=present
   sudo: yes
-- name: Install Xmonad
-  apt: pkg=xmonad state=present
-  sudo: yes
-- name: Install Xmonad-Contrib
-  apt: pkg=libghc-xmonad-contrib-dev state=present
-  sudo: yes
+  with_items:
+    - gnome-session-flashback
+    - indicator-applet
+    - indicator-applet-complete
+    - indicator-applet-session
+    - xmonad
+    - libghc-xmonad-contrib-dev
+
 - name: Create .xmonad dir
   file: path={{ user_home }}/.xmonad state=directory owner={{ ansible_user_id }} group={{ ansible_user_id }}
+
 - name: Copy xmonad.hs
   copy: src=xmonad.hs dest={{ user_home }}/.xmonad/xmonad.hs owner={{ ansible_user_id }} group={{ ansible_user_id }}
   notify:
     - recompile xmonad
+
 - name: Install gnome-session-xmonad
   copy: src=gnome-session-xmonad dest=/usr/bin/gnome-session-xmonad mode=0755
   sudo: yes
+
 - name: Install gnome-xmonad.session
   copy: src=gnome-xmonad.session dest=/usr/share/gnome-session/sessions/gnome-xmonad.session
   sudo: yes
+
 - name: Install gnome-xmonad.desktop
   copy: src=gnome-xmonad.desktop dest=/usr/share/xsessions/gnome-xmonad.desktop
   sudo: yes
+
 - name: Remove bottom gnome panel
   command: gsettings set org.gnome.gnome-panel.layout toplevel-id-list "['top-panel']"

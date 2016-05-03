@@ -6,10 +6,12 @@
     - chromium-browser
     - curl
     - virtualbox
+    - virtualbox-ext-pack
+    - virtualbox-guest-additions-iso
     - docker
     - docker.io
     - intltool
-    - unicode-rxvt
+    - rxvt-unicode
     - htop
     - tmux
     - zsh

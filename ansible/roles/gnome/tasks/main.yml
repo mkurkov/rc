@@ -1,0 +1,9 @@
+---
+- name: Use system keyboard layout
+  command: gsettings set org.freedesktop.ibus.general use-system-keyboard-layout true
+- name: Keyboard layout per window
+  command: gsettings set org.gnome.desktop.input-sources per-window true
+- name: Keyboard input sources - us, ru/phonetic
+  command: gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ru+phonetic')]"
+- name: Keyboard layout tweaks (CTRL-ALT swap, SHIFT-SHIFT layout switch)
+  command: gsettings set org.gnome.desktop.input-sources xkb-options "['grp:alt_shift_toggle', 'grp_led:scroll', 'ctrl:rctrl_ralt','ctrl:ralt_rctrl','ctrl:swap_lalt_lctl']"

@@ -1,0 +1,15 @@
+---
+- name: FPComplete apt key
+  apt_key: keyserver=keyserver.ubuntu.com:80 id=575159689BEFB442 state=present
+  sudo: yes
+
+- name: FPComplete repository
+  apt_repository: repo='deb http://download.fpcomplete.com/ubuntu xenial main' state=present update_cache=yes
+  sudo: yes
+
+- name: Stack install
+  apt: name=stack state=latest
+  sudo: yes
+
+- name: Setup Stack config
+  template: src=stack-config.yaml.j2 dest={{ user_home }}/.stack/config.yaml owner={{ ansible_user_id }} group={{ ansible_user_id }}

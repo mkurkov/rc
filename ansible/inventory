@@ -4,3 +4,4 @@ localhost   ansible_connection=local
 [local:vars]
 fullname=Mikl Kurkov
 email=mkurkov@gmail.com
+github=mkurkov

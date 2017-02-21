@@ -4,7 +4,7 @@ import XMonad.Config.Kde
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
-import XMonad.Util.EZConfig(additionalKeysP)
+import XMonad.Util.EZConfig(additionalKeysP, additionalKeys)
 import System.Exit
 import Graphics.X11.Xlib
 import System.IO
@@ -16,6 +16,8 @@ import qualified XMonad.Actions.Search as S
 import XMonad.Actions.Search
 import qualified XMonad.Actions.Submap as SM
 import XMonad.Actions.GridSelect
+import XMonad.Actions.DynamicWorkspaces
+import XMonad.Actions.CopyWindow(copy)
 
 -- utils
 import XMonad.Util.Scratchpad (scratchpadSpawnAction, scratchpadSpawnActionTerminal, scratchpadManageHook, scratchpadFilterOutWorkspace)
@@ -74,7 +76,13 @@ myKeys =
         ("M-<F11>",  spawn "amixer -q set Master 7%-"),
         ("M-<F12>",  spawn "amixer -q set Master 7%+"),
         ("M-g", goToSelected  defaultGSConfig {gs_navigate = navNSearch}),
-        ("M-f", gridselectWorkspace defaultGSConfig {gs_navigate = navNSearch} W.greedyView)
+        ("M-f", gridselectWorkspace defaultGSConfig {gs_navigate = navNSearch} W.greedyView),
+        -- Workspaces
+        ("M-S-<Backspace>", removeWorkspace),
+        ("M-S-v", selectWorkspace def), -- create or select ws by name and move to it
+        ("M-m", withWorkspace def (windows . W.shift)), -- move window to ws
+        ("M-S-m", gridselectWorkspace defaultGSConfig {gs_navigate = navNSearch} (\ws -> W.greedyView ws . W.shift ws)),
+        ("M-S-r", renameWorkspace def)
     ]
 
 --lockScreenCommand = "qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock"

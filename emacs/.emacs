@@ -48,6 +48,7 @@
 (load "~/rc/emacs/mk-compilation.el")
 (load "~/rc/emacs/mk-webdev")
 (load "~/rc/emacs/mk-typescript")
+(load "~/rc/emacs/mk-elixir")
 
 ;; editing
 (load "~/rc/emacs/mk-markdown")
